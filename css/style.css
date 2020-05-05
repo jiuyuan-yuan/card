@@ -1,0 +1,192 @@
+*{
+	padding: 0;
+	margin:0;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+.topNavBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.5s;
+    color: #b7b7b7;
+}
+
+.topNavBar-inner{
+	padding: 20px  ;
+}
+.topNavBar-inner .logo {
+	cursor: pointer;
+	float: left;
+}
+.topNavBar-inner .logo .rs{
+	font-size: 24px;
+	font-family: "Arial Black";
+	color: #e6686a;
+}
+.topNavBar-inner .logo .card{
+	font-size: 24px;
+	font-family: "Arial Black";
+	color: #9a9da2;
+}
+.topNavBar-inner .menu {
+	float: right;
+}
+.topNavBar-inner .menu ul{
+
+}
+.topNavBar-inner .menu  li{
+	position: relative;
+	float: left;
+	margin:10px;
+}
+.topNavBar-inner .menu  a{
+	color: #b7b7b7;
+}
+.topNavBar .submenu{
+	display: none;
+	position: absolute;
+	white-space: nowrap;
+	top:100%;
+	right: 0;
+}
+.topNavBar  .submenu  li{
+	margin: 0;
+	padding: 5px 10px;
+}
+.banner{
+	height: 515px;
+	background: url(../img/rs-cover.jpg);
+	background-position: center center;
+    background-size: cover;
+}
+.banner .mask{
+	height: 515px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+main {
+	margin-top: -340px;
+}
+.userCard{
+	max-width: 940px;
+	background: #eee;
+	margin: 0 auto;
+
+}
+.pictureAndText{
+	padding:50px;
+}
+.pictureAndText .picture{
+	float: left;
+}
+.userCard img{
+	width: 300px;
+	height: 350px;
+}
+.userCard .text{
+	float: left;
+	margin-left: 65px;
+	width: 470px;
+}
+.userCard dd,.userCard dt{
+	float: left;
+	padding: 5px 0;
+}
+.userCard dd{
+	width: 70%;
+	color: #9da0a7;
+}
+.userCard dt{
+	width: 30%;
+	font-weight: bold;
+}
+.userCard .welcome{
+	color: #fff;
+	line-height: 22px;
+	background:#e6686a;
+	padding: 4px 16px;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+.userCard .triggle{
+	margin-left: 5px;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-left:  10px solid #e6686a;
+	border-top-width: 0;
+	display: block;
+	position: absolute;
+	top:100%;
+}
+.userCard h1{
+	margin-top: 18px;
+	font-weight: normal;
+}
+.userCard hr{
+	margin:20px 0;
+}
+.userCard .media{
+	background: #e6686a;
+	text-align: center;
+	
+}
+.userCard .media > a{
+	display: inline-block;
+    width: 40px;
+    line-height: 30px;
+    padding: 5px 0;
+    border-radius: 50%;
+    margin: 16px;
+}
+.userCard .media > a:hover{
+	background: #c25456;
+}
+.userCard svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+    vertical-align: top;
+}
+.downloadResume,.selfIntroduce{
+	text-align: center;
+}	
+.downloadResume a{
+	border: 1px solid #cdcfd1;
+	display: inline-block;
+	margin: 32px 0;
+	background: #efefef;
+	padding: 21px 50px;
+	color: #3d4451;
+	font-weight: bold;
+	transition: all 0.3s;
+}
+.downloadResume a:hover{
+	box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2);
+}
+.selfIntroduce{
+	max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: kai;
+    line-height: 1.8;
+    font-size: 18px;
+}
