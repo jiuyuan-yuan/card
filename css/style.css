@@ -2,11 +2,14 @@
 	padding: 0;
 	margin:0;
 }
-ul{
+ul,ol{
 	list-style: none;
 }
 a{
 	text-decoration: none;
+}
+body{
+	background:#efefef;
 }
 .clearfix::after {
     content: '';
@@ -36,6 +39,7 @@ a{
 	float: left;
 }
 .topNavBar-inner .logo .rs{
+	margin-right:5px;
 	font-size: 24px;
 	font-family: "Arial Black";
 	color: #e6686a;
@@ -48,16 +52,21 @@ a{
 .topNavBar-inner .menu {
 	float: right;
 }
-.topNavBar-inner .menu ul{
-
-}
 .topNavBar-inner .menu  li{
 	position: relative;
 	float: left;
-	margin:10px;
+	margin:0 17px;
 }
 .topNavBar-inner .menu  a{
+	font-size: 12px;
 	color: #b7b7b7;
+}
+.menu a:hover::after{
+	content: '';
+	display: block;
+	background: red;
+	width: 100%;
+	height: 3px;
 }
 .topNavBar .submenu{
 	display: none;
@@ -78,15 +87,16 @@ a{
 }
 .banner .mask{
 	height: 515px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 main {
 	margin-top: -340px;
 }
 .userCard{
 	max-width: 940px;
-	background: #eee;
+	background: #fff;
 	margin: 0 auto;
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
 
 }
 .pictureAndText{
@@ -189,4 +199,103 @@ main {
     font-family: kai;
     line-height: 1.8;
     font-size: 18px;
+}
+.skills{
+	max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+.skills h2,.portfolio h2{
+	font-size: 35px;
+	text-align: center;
+	margin-bottom: 20px;
+	color: #3d4451;
+}
+.skills ol{
+	background:#fff;
+	padding: 50px;
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+}
+.skills li{
+	float: left;
+	display: inline-block;
+	white-space:nowrap; 
+	width: 50%;
+}
+.skills .progressBar{
+	height: 5px;
+	margin: 5px 0 40px;
+	background: #fae1e1;
+}
+.skills .progress{
+	background: red;
+	width: 50%;
+	height: 5px;
+}
+.portfolio{
+	max-width: 940px;
+  	margin: auto;
+    margin-top: 60px;
+    text-align: center;
+}
+.portfolio nav{
+	text-align: center;
+	display: inline-block;
+
+}
+.portfolio ol{
+	display: inline-block;
+}
+.portfolio li{
+	cursor: pointer;
+	float: left;
+	margin-left: 20px;
+}
+.portfolio li:nth-child(1){
+	margin-left: 0px;
+}
+.work{
+	max-width: 940px;
+  	margin: auto;
+    margin-top: 60px;
+    height: 500px;
+    background: #eee;
+}
+.portfolio .portfolioBar{
+	height: 5px;
+	width: 100%;
+	background: #fdfdfd;
+	border-radius: 2px;
+}
+.barInner{
+	background: #E6686A;
+    border-radius: 2px;
+    transition: all 0.3s;
+    height: 100%;
+}
+.barInner.site-0{
+	margin-left: 0;
+    width: 50px;
+}
+.barInner.site-1{
+	margin-left: 50px;
+    width: 37px;
+}
+.barInner.site-2{
+	margin-left:105px;
+    width: 92px;
+}
+.work {
+	position: relative;
+}
+.work .small{
+	position: absolute;
+	top:0;
+	right: 0;
+}
+.work :nth-child(2){
+	position: absolute;
+	top:312px;
+	right: 0;
 }
