@@ -29,10 +29,18 @@ body{
     width: 100%;
     transition: all 0.5s;
     color: #b7b7b7;
+    padding: 20px 0;
+}
+.topNavBar.sticking{
+	background:#fff;
+	padding:15px 0;
+	color:black;
+	box-shadow: 0 0 10px rgba(0,0,0,0.25);
+	z-index: 1
 }
 
 .topNavBar-inner{
-	padding: 20px  ;
+	padding: 0 20px ;
 }
 .topNavBar-inner .logo {
 	cursor: pointer;
@@ -52,32 +60,59 @@ body{
 .topNavBar-inner .menu {
 	float: right;
 }
-.topNavBar-inner .menu  li{
+.topNavBar-inner .menu li{
 	position: relative;
 	float: left;
 	margin:0 17px;
 }
+.topNavBar-inner  li.active > ul{
+	display: block;
+	animation: submenuSlide 0.3s;
+}
+@keyframes submenuSlide{
+	0%{margin-right:100%;}
+	100%{margin-right:0;}
+}
 .topNavBar-inner .menu  a{
+	padding:5px 0;
 	font-size: 12px;
 	color: #b7b7b7;
+	font-weight: bold;
+	color: inherit;
 }
-.menu a:hover::after{
+.menu > ul{
+	margin-top: 5px;
+}
+.menu a:hover::after,.highlight::after{
 	content: '';
 	display: block;
-	background: red;
-	width: 100%;
-	height: 3px;
+	background: #e06567;
+	height: 2px;
+	border-radius: 20%;
+	animation: menuSlide 0.3s;
 }
+@keyframes menuSlide{
+	0%{
+		width: 0;
+	}
+	100%{
+		width: 100%;
+	}
+}
+
 .topNavBar .submenu{
 	display: none;
 	position: absolute;
 	white-space: nowrap;
-	top:100%;
+	top:15px;
 	right: 0;
+	transition: all 1s;
+	padding-top: 5px;
 }
+
 .topNavBar  .submenu  li{
 	margin: 0;
-	padding: 5px 10px;
+	padding: 5px 0;
 }
 .banner{
 	height: 515px;
@@ -264,25 +299,25 @@ main {
 }
 .portfolio .portfolioBar{
 	height: 5px;
-	width: 100%;
-	background: #fdfdfd;
-	border-radius: 2px;
+	background:#fdfdfd;
+    border-radius: 2px;
 }
 .barInner{
 	background: #E6686A;
-    border-radius: 2px;
-    transition: all 0.3s;
+	border-radius: 2px;
     height: 100%;
+    width: 100%;
+	transition: all 0.3s;
 }
-.barInner.site-0{
+.portfolioBar.state-0 .barInner{
 	margin-left: 0;
-    width: 50px;
+    width: 35px;
 }
-.barInner.site-1{
+.portfolioBar.state-1 .barInner{
 	margin-left: 50px;
     width: 37px;
 }
-.barInner.site-2{
+.portfolioBar.state-2 .barInner{
 	margin-left:105px;
     width: 92px;
 }
