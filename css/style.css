@@ -16,6 +16,57 @@ body{
     display: block;
     clear: both;
 }
+.site-welcome{
+	display: none;
+	position: fixed;
+	top:0;
+	left:0;
+	height: 100%;
+	width:100%;
+	background:#756b6b;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+.site-welcome.active{
+	display: flex;
+}
+.loading::after,.loading::before{
+	content:'';
+	position:absolute;
+	width: 0px;
+	height: 0px;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	margin:auto;
+	border-radius:50%;
+	background:black;
+	animation: s 1s linear infinite;
+	z-index: 1;
+}
+.loading::after{
+  animation-delay:1.5s;
+
+}
+@keyframes s{
+  0%{
+    width:0;height:0;opacity:1;
+  }
+  100%{
+     width:100px;height:100px;opacity:0;
+  }
+}
+[data-x].offset{
+	transform: translateY(150px);
+}
+[data-x]{
+	transform: translateY(0);
+	transition: all .5s;
+	
+}
+
 .icon {
    width: 1em; height: 1em;
    vertical-align: -0.15em;
@@ -327,6 +378,11 @@ main {
 }
 .work {
 	position: relative;
+}
+.work .big{
+	position: absolute;
+	top:0;
+	left: 0;
 }
 .work .small{
 	position: absolute;

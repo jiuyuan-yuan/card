@@ -1,7 +1,13 @@
-
-	//作品slide条切换
-	var pl = document.getElementById('portfolioList').children;
+	var minIndex = 0
+	//添加offset类
+	var specialTags = document.querySelectorAll('[data-x]')
+		for(let i = 0 ; i < specialTags.length ; i++){
+			specialTags[i].classList.add('offset')
+		}
 	
+
+	//portfolioList slide条切换
+	var pl = document.getElementById('portfolioList').children;
 	for (let i = 0 ; i < pl.length ; i++) {
 		pl[i].onclick = function(){
 			var plButton = document.getElementById('portfolioBar');
@@ -18,22 +24,33 @@
 			x.currentTarget.classList.remove('active')
 		}
 	}
-	// closeToMenu
-	let minIndex = 0
+	
+
 	window.onscroll = function(x){
+
 		//固定navTopBar
 		if(window.scrollY > 0){
 			topNavBar.classList.add('sticking')
 		}else{
 			topNavBar.classList.remove('sticking')
 		}
-		var specialTags = document.querySelectorAll('[data-x]')
 		
-		//高亮 navTopBar-menu栏
+		lightClosest()
+	}
+	//open等待
+	setTimeout(function(){
+		sitewelcome.classList.remove('active')
+		lightClosest()
+	},500)
+
+	function lightClosest(){
+		//高亮 距离窗口最近的navTopBar-menu栏
 		for(let i = 0 ; i < specialTags.length ; i++){	
 		 	if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
 		 		minIndex = i;
 		 	}
+		 specialTags[minIndex].classList.remove('offset')
+		 //寻找 id对应的topBarNav-menu a标签
 		 let id = specialTags[minIndex].id
 		 let a = document.querySelectorAll('a[href="#' + id + '"]')
 		 let meAndBrother = a[0].parentNode.parentNode.children 
@@ -43,8 +60,7 @@
 		 meAndBrother[minIndex].classList.add('highlight')
 		}
 	}
-
-	//滑动
+	//简单滑动
 	var aTags = document.querySelectorAll('nav.menu > ul > li > a')
 	for(let i = 0; i < aTags.length; i++){
 		aTags[i].onclick = function(x){
@@ -68,7 +84,7 @@
 			
 		}
 
-	}
+	} 
 
 
 
@@ -86,4 +102,4 @@
 	      box.style.setProperty('transform','translate('+coords.x+'px,'+ coords.y+'px)');
 	    })
 	    .start();
-	    */
+	*/
